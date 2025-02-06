@@ -1,0 +1,55 @@
+@keyframes borderAnimation {
+    0% {
+        clip-path: inset(0 100% 100% 0);
+    }
+
+    25% {
+        clip-path: inset(0 100% 100% 0);
+    }
+
+    50% {
+        clip-path: inset(0 0 100% 0);
+    }
+
+    75% {
+        clip-path: inset(0 0 0 0);
+    }
+
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes borderGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.8);
+    }
+
+    100% {
+        box-shadow: 0 0 5px rgba(var(--primary-rgb), 0.5);
+    }
+}
+
+.border-box-animation {
+    position: relative;
+    border: 2px solid rgb(var(--primary));
+    animation: borderAnimation 2s ease-in-out forwards,
+        borderGlow 2s ease-in-out infinite;
+}
+
+.digital-char {
+    animation: digitalAppear 0.3s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes digitalAppear {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
